@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.post('/checked', (req, res) => {
+app.post('/check', (req, res) => {
     const jsonString = fs.readFileSync("./clients.json")
     const clients = JSON.parse(jsonString);
     clients.forEach(client =>{

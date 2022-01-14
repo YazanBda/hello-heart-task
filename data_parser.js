@@ -4,7 +4,7 @@ const path = './' + process.argv[2] +'/';
 const files = fs.readdirSync(path);
 const results = [];
 
-const getClientName = function(file_name)
+const getClientName = (file_name) =>
 {
   return file_name.split(".")[0];
 }
@@ -25,9 +25,9 @@ const CreateEmployee = (firstName,lastName,birth,id)=>{
     }
 }
 
-const ReadData = function(file)
+const ReadData = (file) =>
 {
-  let client = CreateClient(getClientName(file));
+  const client = CreateClient(getClientName(file));
   results.push(client); 
   
   fs.createReadStream(path+file) 
@@ -42,7 +42,7 @@ const ReadData = function(file)
   })
 }
 
-const ParseData = function()
+const ParseData = ()=>
 {
   files.map(ReadData);
 }
