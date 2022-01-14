@@ -22,11 +22,11 @@ $ npm install
 ## Usage
 you must have a folder that contains CSV files provided by the company clients that list their employees ( a sample folder called csvfiles that contains different CSV files is provided in the home root of this repo, you can use it instead)
 
-run index.js with the relative path of the folder that contains the CSV files as an argument to get the data parsed, filtered with the relevant fields, and loaded to a JSON file called clients.json in the home root.
+run data_parser.js with the relative path of the folder that contains the CSV files as an argument to get the data parsed, filtered with the relevant fields, and loaded to a JSON file called clients.json in the home root.
 
 for example, the following command loads the sample CSV files folder
 ```shell
-$ node index.js /csvfiles
+$ node data_parser.js /csvfiles
 ```
 
 
@@ -73,5 +73,5 @@ for example, if a specific employee left, we expect that it should be removed fr
 
 so while the server is running in the background, all we need to do is to run the command below periodically and it should do all the work(update the clients.json accordingly)
 ```shell
-$ node index.js {the relative path of the CSV files folder you choose to work with}
+$ node data_parser.js {the relative path of the CSV files folder you choose to work with}
 ```
